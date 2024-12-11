@@ -1,0 +1,137 @@
+{
+	"info": {
+		"_postman_id": "152efc96-b63b-4b85-b6a3-7f8a80dbb0c2",
+		"name": "API Push Notification with FCM",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39013067"
+	},
+	"item": [
+		{
+			"name": "Send Notification By 1 Token",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"recipientToken\": \"dkWOKJhwLYSFR979Dd_8KA:APA91bHKN4lrm7rO_yyB6hdY7NwkR2eTrhFECfqZXClloGhYivF_uvQpQk5HeJWA94mQNuGAMCD6KeoQ3_93lWtFy9v42gid4RBWkiaBLiPxpPRizKOj_EU\",\r\n    \"title\": \"WW3\",\r\n    \"body\": \"loài người bị diệt mất 99%\",\r\n    \"imageUrl\": \"https://www.chinausfocus.com/d/file/202407/ac87934040a0a386634a50a6cc4ebdf2.jpg\",\r\n    \"data\": {\r\n        \"key1\": \"value 1\",\r\n        \"key2\": \"value 2\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/notification",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"notification"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Send Notification By Topic",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"topic\": \"Hello\",\r\n    \"title\": \"WW3\",\r\n    \"body\": \"loài người bị diệt mất 99%\",\r\n    \"imageUrl\": \"https://www.chinausfocus.com/d/file/202407/ac87934040a0a386634a50a6cc4ebdf2.jpg\",\r\n    \"data\": {\r\n        \"key1\": \"value 1\",\r\n        \"key2\": \"value 2\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/notification/topic",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"notification",
+						"topic"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Send Notification By Multi Token",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"recipientTokens\": [\"dkWOKJhwLYSFR979Dd_8KA:APA91bHKN4lrm7rO_yyB6hdY7NwkR2eTrhFECfqZXClloGhYivF_uvQpQk5HeJWA94mQNuGAMCD6KeoQ3_93lWtFy9v42gid4RBWkiaBLiPxpPRizKOj_EU\",\r\n    \"coLVUqsbQzUforgiPQORFj:APA91bFPeoNLKPcfDti6pA8uHlmckzd9TBURW2i-e3nj-ChBTCBqlAUdKFf_rweLgWqVgwQaRvSDXvdsvU5gcZMKm7N3jAyeSzs94UIf8GzYkpxFq6NvrJg\"\r\n    ],\r\n    \"title\": \"WW3\",\r\n    \"body\": \"loài người bị diệt mất 99%\",\r\n    \"imageUrl\": \"https://www.chinausfocus.com/d/file/202407/ac87934040a0a386634a50a6cc4ebdf2.jpg\",\r\n    \"data\": {\r\n        \"key1\": \"value 1\",\r\n        \"key2\": \"value 2\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/notification/multi-token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"notification",
+						"multi-token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Subscribe Token To Topic",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"tokens\": [\"dkWOKJhwLYSFR979Dd_8KA:APA91bHKN4lrm7rO_yyB6hdY7NwkR2eTrhFECfqZXClloGhYivF_uvQpQk5HeJWA94mQNuGAMCD6KeoQ3_93lWtFy9v42gid4RBWkiaBLiPxpPRizKOj_EU\",\r\n    \"coLVUqsbQzUforgiPQORFj:APA91bFPeoNLKPcfDti6pA8uHlmckzd9TBURW2i-e3nj-ChBTCBqlAUdKFf_rweLgWqVgwQaRvSDXvdsvU5gcZMKm7N3jAyeSzs94UIf8GzYkpxFq6NvrJg\"\r\n    ],\r\n    \"topicName\": \"Hello\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/notification/subscribe-topic",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"notification",
+						"subscribe-topic"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
